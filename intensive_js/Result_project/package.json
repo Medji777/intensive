@@ -1,0 +1,37 @@
+{
+  "name": "intensive",
+  "version": "1.0.0",
+  "description": "intensive",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Medji777/intensive.git"
+  },
+  "author": "Dergachev Vladimir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Medji777/intensive/issues"
+  },
+  "homepage": "https://github.com/Medji777/intensive#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect-php": "^1.0.3",
+    "gulp-csso": "^3.0.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglifyjs": "^0.6.2"
+  }
+}
