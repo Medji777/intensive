@@ -22,13 +22,13 @@ gulp.task('html',()=>{
 
 gulp.task('js',()=>{
     gulp.src('./app/js/**/*.js')
-        .pipe(babel({
+        /*.pipe(babel({
             presets: ['@babel/env']
         }))
         .pipe(concat('all.js'))
         .pipe(gulp.dest('./dist/js'))
         .pipe(jsMin())
-        .pipe(rename({suffix: '.min'}))
+        .pipe(rename({suffix: '.min'}))*/
         .pipe(gulp.dest('./dist/js'))
         .pipe(notify('Done js!'));
     BS.reload({stream: false});
