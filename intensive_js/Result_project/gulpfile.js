@@ -1,11 +1,11 @@
 let gulp = require('gulp'),
     notify = require('gulp-notify'),
-    babel = require('gulp-babel'),
+    //babel = require('gulp-babel'),
     cssMin = require('gulp-csso'),
     htmlMin = require('gulp-htmlmin'),
-    jsMin = require('gulp-uglifyjs'),
+    //jsMin = require('gulp-uglifyjs'),
     autoPrefix = require('gulp-autoprefixer'),
-    concat = require('gulp-concat'),
+    //concat = require('gulp-concat'),
     BS = require('browser-sync'),
     rename = require('gulp-rename'),
     delFiles = require('del'),
@@ -22,13 +22,14 @@ gulp.task('html',()=>{
 
 gulp.task('js',()=>{
     gulp.src('./app/js/**/*.js')
-        /*.pipe(babel({
-            presets: ['@babel/env']
-        }))
-        .pipe(concat('all.js'))
-        .pipe(gulp.dest('./dist/js'))
-        .pipe(jsMin())
-        .pipe(rename({suffix: '.min'}))*/
+    /*.pipe(babel({
+        presets: ['@babel/env'],
+        plugins: ['@babel/transform-runtime']
+    }))
+    .pipe(concat('all.js'))
+    .pipe(gulp.dest('./dist/js'))
+    .pipe(jsMin())
+    .pipe(rename({suffix: '.min'}))*/
         .pipe(gulp.dest('./dist/js'))
         .pipe(notify('Done js!'));
     BS.reload({stream: false});
@@ -74,10 +75,10 @@ gulp.task('logo',()=>{
 });
 
 //gulp.task('php',()=>{
-    //gulp.src('./app/backend/**/*.php')
-       // .pipe(gulp.dest('./dist/php'))
-        //.pipe(notify('Done php'));
-    //BS.reload({stream: false});
+//gulp.src('./app/backend/**/*.php')
+// .pipe(gulp.dest('./dist/php'))
+//.pipe(notify('Done php'));
+//BS.reload({stream: false});
 //});
 
 gulp.task('clear',()=>{
@@ -98,12 +99,10 @@ gulp.task('watchFiles',()=>{
 gulp.task('SPhp',()=>{
     serverPhp.server({
         base: './dist',
-        port: 8000,
         bin: 'D:/php5.6/php/php.exe',
         ini: 'D:/php5.6/php/php.ini'},()=>{
         BS({
-            proxy: '127.0.0.1',
-            port: '8000'
+            proxy: '127.0.0.1:8000'
         })
     })
 });
